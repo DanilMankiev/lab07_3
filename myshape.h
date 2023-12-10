@@ -20,7 +20,9 @@ public:
 class Circle : public QGraphicsItem, public Shape {
     QPoint center;
     double radius;
+
 public:
+    static int countC;
     Circle(QPoint center, double radius);
 
     QRectF boundingRect() const override;
@@ -39,7 +41,9 @@ class Rect :public QGraphicsItem, public Shape {
     int y;
     int height;
     int width;
+
 public:
+    static int countR;
     Rect(int x,int y, int height,int width);
 
     QRectF boundingRect() const override;
@@ -59,8 +63,10 @@ class Triangle :public QGraphicsPolygonItem,public Shape{
     QPointF point3;
     bool  isBeingMoved;
     QPointF offset;
+
 public:
     Triangle(QPolygonF &polygon,QGraphicsItem *parent = nullptr);
+    static int countT;
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
 
